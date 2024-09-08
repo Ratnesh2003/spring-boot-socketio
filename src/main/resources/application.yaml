@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: DemoWebSocketApplication
+
+socket:
+  host: localhost
+  port: 8081
