@@ -42,8 +42,9 @@ public class SocketIOConfig {
             if (!token.isEmpty()) {
                 // You can extract user information from token using your JWTTokenUtil class and validate it
                 // or throw error if token is invalid
-                // data object can be used to add custom headers
-                // you can add user information in headers like role, email, etc.
+                // you can pass more information in headers like role, email, etc.
+                // data object can be used to add custom headers after authorization
+                data.getHttpHeaders().add("User", "userDetailsAfterAuthorization");
                 return new AuthorizationResult(true);
             }
             return new AuthorizationResult(false);

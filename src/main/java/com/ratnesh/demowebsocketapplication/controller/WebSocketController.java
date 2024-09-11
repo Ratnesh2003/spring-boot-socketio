@@ -25,6 +25,8 @@ public class WebSocketController {
             log.info("Demo event received: {}", socketDetail);
             String userInfo = client.getHandshakeData().getHttpHeaders().get("User-Name");
             log.info("User info: {}", userInfo);
+            // Access user information added after authorization
+            log.info(client.getHandshakeData().getHttpHeaders().get("User"));
             // Add your business logic here.
             ackRequest.sendAckData("Demo event received");
         }
